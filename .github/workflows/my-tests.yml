@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  my-testing:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Print Hello World from testing
+      run : echo "Hello World"
+
+  my-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Print Hello World from deploy
+      run : echo "Hello World"
+    
