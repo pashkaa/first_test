@@ -1,7 +1,4 @@
 name: CI
-env:
-  app_name    : "Test"
-  package_name: "Test file-${{github.sha}}"
 
 on:
   push:
@@ -24,20 +21,7 @@ jobs:
         echo "Application name is: ${{ env.app_name }}"
       
     - name: Git clone my repo
-      uses: actions/checkout@1
+      uses: actions/checkout@v1
       
     - name: List current folders
       run : ls -la
-
-  my-deploy:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Print Hello World from deploy
-      run : echo "Hello World"
-      
-    - name: Print few comands
-      run : |
-        echo "Hello message 1"
-        echo "Hello message 2"
-        echo "Deploy name is: ${{ env.package_name }}"
