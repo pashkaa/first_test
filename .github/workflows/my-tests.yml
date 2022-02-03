@@ -1,4 +1,7 @@
 name: CI
+env:
+  app_name    : "Test"
+  package_name: "Test file-${{github.sha}}"
 
 on:
   push:
@@ -13,6 +16,12 @@ jobs:
     steps:
     - name: Print Hello World from testing
       run : echo "Hello World"
+      
+    - name: Print few comands
+      run : |
+        echo "Hello message 1"
+        echo "Hello message 2"
+        echo "Application name is: ${{ env.name }}"
 
   my-deploy:
     runs-on: ubuntu-latest
@@ -20,4 +29,9 @@ jobs:
     steps:
     - name: Print Hello World from deploy
       run : echo "Hello World"
-    
+      
+    - name: Print few comands
+      run : |
+        echo "Hello message 1"
+        echo "Hello message 2"
+        echo "Deploy name is: ${{ env.package_name }}"
